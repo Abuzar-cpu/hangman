@@ -23,16 +23,6 @@ for(let i = 0; i < randomWord.length; i++)
 unders = document.getElementsByClassName("guessedLetter");
 
 function checkLetter(letterElement) {
-    if(userWon())
-    {
-        alert("You won");
-        return;
-    }
-    if(chances <= 0)
-    {
-        alert("Game over");
-        return;
-    }
     var letterInWord = false;
     var clickedLetter = letterElement.innerText.trim();
     
@@ -49,6 +39,19 @@ function checkLetter(letterElement) {
         letterElement.classList.add("wrong");
         chances--;
         document.getElementById("guessCount").innerText = "Remaining chances: " + chances;
+    }
+    if(userWon())
+    {
+        document.getElementById("word").style.backgroundColor = "lime";
+        document.getElementById("word").style.padding = "1vh 1vw";
+        return;
+    }
+    if(chances <= 0)
+    {
+        document.getElementById("word").style.color = "white";
+        document.getElementById("word").style.backgroundColor = "red";
+        document.getElementById("word").style.padding = "1vh 1vw";
+        return;
     }
 }
 
