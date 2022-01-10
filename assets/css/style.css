@@ -1,0 +1,37 @@
+body{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.letter{
+    padding: 2vh 3vw;
+    margin: 1vh 1vw;
+    border: 1px solid black;
+}
+
+.correct{
+    border: 1px solid lime;
+    background-color: lime;
+    color: #fff;
+}
+
+.wrong{
+    background-color: red;
+    color: #fff;
+}
+
+#guessCount{
+    margin: 2vh 1vw;
+}
+
+#id{
+    margin-left: auto;
+}
+
+#word{
+    justify-content: center;
+}
