@@ -88,14 +88,16 @@ function checkLetter(letterElement) {
         }
     }
     
-    if (userWon()) {
-        document.getElementById("word").style.backgroundColor = "lime";
-        document.getElementById("word").style.padding = "1vh 1vw";
-        return;
-    }
     if (chances <= 0) {
         document.getElementById("word").style.color = "white";
         document.getElementById("word").style.backgroundColor = "red";
+        document.getElementById("word").style.padding = "1vh 1vw";
+        writeWord();
+        return;
+    }
+
+    if (userWon()) {
+        document.getElementById("word").style.backgroundColor = "lime";
         document.getElementById("word").style.padding = "1vh 1vw";
         return;
     }
@@ -113,4 +115,13 @@ userWon = () => {
         }
     }
     return true;
+}
+
+
+writeWord = () =>
+{
+    for(let i = 0; i < randomWord.length; i++)
+    {
+        unders[i].innerText = randomWord[i];
+    }
 }
