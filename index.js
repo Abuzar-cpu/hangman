@@ -33,7 +33,19 @@ let wordList = [
     "arch",
 ];
 
+
+/*
+ *Selecting random word from the list above
+ */
+ let randomWord = wordList[Math.floor(Math.random() * 29)].toUpperCase();
+ console.log(randomWord);
+
 let letters = document.getElementsByClassName("letter");
+let lettersTxt = [];
+
+for (const letter of letters) {
+    lettersTxt.push(letter.innerText);
+}
 
 /*
  *Adding onclick listener to all letters
@@ -42,11 +54,13 @@ for (const letter of letters) {
     letter.setAttribute("onclick", "checkLetter(this)");
 }
 
-/*
- *Selecting random word from the list above
- */
-let randomWord = wordList[Math.floor(Math.random() * 29)].toUpperCase();
-console.log(randomWord);
+
+// document.addEventListener("keyup", func);
+
+document.onkeyup = (e) => {
+    checkLetter(letters[lettersTxt.indexOf(e.key.toUpperCase())]);
+}
+
 
 let word = document.getElementById("word");
 
@@ -101,7 +115,6 @@ function checkLetter(letterElement) {
     if (userWon()) {
         document.getElementById("word").style.backgroundColor = "lime";
         document.getElementById("word").style.padding = "1vh 1vw";
-        document.getElementsByTagName("body").style.backgroundColor = "linear-gradient(to right, #2bc0e4, #eaecc6); ";
         return;
     }
     
