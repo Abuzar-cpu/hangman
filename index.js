@@ -1,4 +1,5 @@
-let chances = 6;
+let chances = 10;
+let pictureId = 1;
 let wordList = [
     "able",
     "about",
@@ -82,6 +83,7 @@ function checkLetter(letterElement) {
 
     if (!letterInWord) {
         if (!userWon() && !(chances <= 0)) {
+            document.getElementById("manImg").setAttribute("src", "./assets/images/" + pictureId++ + ".jpg");
             letterElement.classList.add("wrong");
             chances--;
             document.getElementById("guessCount").innerText = "Remaining chances: " + chances;
@@ -99,6 +101,7 @@ function checkLetter(letterElement) {
     if (userWon()) {
         document.getElementById("word").style.backgroundColor = "lime";
         document.getElementById("word").style.padding = "1vh 1vw";
+        document.getElementsByTagName("body").style.backgroundColor = "linear-gradient(to right, #2bc0e4, #eaecc6); ";
         return;
     }
     
