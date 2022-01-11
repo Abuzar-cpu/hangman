@@ -128,3 +128,8 @@ writeWord = () =>
         unders[i].innerText = randomWord[i];
     }
 }
+
+reload = () =>
+{
+    window.location.reload();
+}

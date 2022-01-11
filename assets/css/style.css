@@ -58,3 +58,12 @@ body{
 #manImg{
     max-width: 10vw;
 }
+
+button
+{
+    margin: 1vh 1vw;
+    background-color: #4b1248;
+    color: white;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+}
